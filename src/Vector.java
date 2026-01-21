@@ -1,3 +1,4 @@
+package src;
 public class Vector<T extends Number> {
   T a;
   private double[] data;

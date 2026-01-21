@@ -1,3 +1,4 @@
+package src;
 public class Pair<T, R> {
   private T first;
   private R second;

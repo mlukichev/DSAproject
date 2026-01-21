@@ -1,3 +1,4 @@
+package src;
 public class Solver<T extends Number> {
   private final Equation<T, T> equation;
   private final double maxTime;
