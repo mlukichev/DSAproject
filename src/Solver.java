@@ -1,4 +1,9 @@
 package src;
+
+import src.math.Vector;
+import src.numbers.Number;
+import src.utils.Pair;
+
 public class Solver<T extends Number> {
   private final Equation<T, T> equation;
   private final double maxTime;
@@ -16,11 +21,11 @@ public class Solver<T extends Number> {
     Vector<T> k1 = equation.eval(t, start);
     Vector<T> k2 = equation.eval(t+step/2, start.add(k1.mul(step/2)));
     Vector<T> k3 = equation.eval(t+step/2, start.add(k2.mul(step/2)));
-    Vector<T> k4 = equation.eval(t+step, k3.add(step));
+    Vector<T> k4 = equation.eval(t+step, start.add(k3.add(step)));
     return start.add(k1.add(k2.mul(2).add(k3.mul(2).add(k4))).mul(step/6));
   }
 
-  private Vector<T> integrate(Vector<T> start) {
+  private Pair<Double, Vector<T>> integrate(Vector<T> start) {
     double t = 0;
     Vector<T> sum = start;
     Vector<T> prev = start;
@@ -35,11 +40,13 @@ public class Solver<T extends Number> {
       }
       t += step;
     }
-    return sum;
+    return new Pair<Double, Vector<T>>(t, sum);
   }
 
-  public Pair<Vector<T>, Vector<T>> solve() {
+  private 
 
+  public Pair<Vector<T>, Vector<T>> solve() {
+    
   }
 
 }
