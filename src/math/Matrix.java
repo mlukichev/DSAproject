@@ -58,4 +58,28 @@ public class Matrix<T extends Number, R extends Number> {
     }
     return new Vector<T>(out);
   }
+
+  public Matrix<R, T> transpose() {
+    T a = (T)(new Object());
+    R b = (R)(new Object());
+    Matrix<R, T> out = new Matrix<R, T>();
+    for (int i=0; i<b.getN(); ++i) {
+      for (int j=0; i<a.getN(); ++j) {
+        out.set(i, j, at(i, j));
+      }
+    }
+    return out;
+  }
+
+  public Matrix<T, T> multTranspose(Matrix<R, T> mat) {
+    T a = (T)(new Object());
+    R b = (R)(new Object());
+    Matrix<T, T> out = new Matrix<T, T>();
+    for (int i=0; i<b.getN(); ++i) {
+      for (int j=0; i<a.getN(); ++j) {
+        double sum = 0;
+      }
+    }
+  }
+
 }
