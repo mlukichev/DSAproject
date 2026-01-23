@@ -19,6 +19,10 @@ public class Matrix<T extends Number, R extends Number> {
     return data[r][c];
   }
 
+  public void set(int r, int c, double val) {
+    data[r][c] = val;
+  }
+
   public Matrix<T, R> add(Matrix<T, R> other) {
     T a = (T)(new Object());
     R b = (R)(new Object());

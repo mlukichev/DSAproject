@@ -25,7 +25,7 @@ public class Vector<T extends Number> {
   public Vector<T> add(Vector<T> other) {
     T a = (T)(new Object());
     double[] out = new double[a.getN()];
-    double[] otherData = getData();
+    double[] otherData = other.getData();
     for (int i=0; i<a.getN(); ++i) {
       out[i] = data[i]+otherData[i];
     }
@@ -47,6 +47,16 @@ public class Vector<T extends Number> {
     double[] out = new double[a.getN()];
     for (int i=0; i<a.getN(); ++i) {
       out[i] = data[i]*other;
+    }
+    return new Vector<T>(out);
+  }
+
+  public Vector<T> divEach(Vector<T> other) {
+    T a = (T)(new Object());
+    double[] out = new double[a.getN()];
+    double[] otherData = other.getData();
+    for (int i=0; i<a.getN(); ++i) {
+      out[i] = data[i]/otherData[i];
     }
     return new Vector<T>(out);
   }

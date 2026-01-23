@@ -1,4 +1,4 @@
-package src;
+package src.utils;
 
 import src.math.Vector;
 import src.numbers.Number;
